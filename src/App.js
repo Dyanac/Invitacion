@@ -38,16 +38,20 @@ const ValentineInvite = () => {
         }
     }, [accepted]);
 
-    const handleResponse = () => {
-      const lowerResponse = response.toLowerCase();
-      if (["acepto", "si", "claro"].includes(lowerResponse)) {
-          setAccepted(true);
-          sendEmail("Aceptó 💖");
-      } else {
-          setAccepted(false);
-          sendEmail("Rechazó 💔");
-      }
-  };
+const handleResponse = () => {
+    const lowerResponse = response.toLowerCase();
+    const affirmativeKeywords = ["acepto", "si", "claro", "sí", "obvio", "por supuesto"];
+    // Verifica si alguna de las palabras afirmativas está presente en la respuesta
+    const isAffirmative = affirmativeKeywords.some(keyword => lowerResponse.includes(keyword));
+
+    if (isAffirmative) {
+        setAccepted(true);
+        sendEmail("Aceptó 💖");
+    } else {
+        setAccepted(false);
+        sendEmail("Rechazó 💔");
+    }
+};
     const opts = {
       height: "0",
       width: "0",
