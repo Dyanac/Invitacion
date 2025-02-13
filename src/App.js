@@ -64,6 +64,10 @@ const handleResponse = () => {
           rel: 0
       }
   };
+      const handleVideoReady = (event) => {
+    // Reproduce el video tan pronto como está listo
+    event.target.playVideo();
+  };
 
     return (
         <div className={`container ${accepted === true ? 'container-acepta' : accepted === false ? 'container-rechaza' : ''}`}>
