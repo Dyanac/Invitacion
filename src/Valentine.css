@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://saludconlupa.com/media/images/SanValentin.width-1920.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-color 1s ease;
+}
+
+.container {
+    background: pink;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    transition: transform 0.5s ease;
+}
+
+.title {
+    color: red;
+    font-size: 24px;
+}
+
+.input, .button {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #218838;
+}
+
+.response {
+    font-weight: bold;
+}
+
+.response-acepta {
+    color: green;
+    animation: shine 1.5s infinite;
+}
+
+.response-rechaza {
+    color: red;
+    animation: shake 0.5s;
+}
+
+.response-image {
+    margin-top: 20px;
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+@keyframes shine {
+    0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+    50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+    100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+}
+
+.body-acepta {
+    background: url('https://media0.giphy.com/media/TmT51OyQLFD7a/giphy.gif') center center / cover no-repeat !important;
+    
+}
+
+.body-rechaza {
+    background: url('https://i.gifer.com/PbVE.gif') center center / cover no-repeat !important;
+    animation: backgroundReject 1s forwards;
+}
